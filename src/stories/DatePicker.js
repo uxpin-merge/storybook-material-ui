@@ -36,7 +36,7 @@ DatePicker.propTypes = {
 };
 
 DatePicker.defaultProps = {
-  variant: PropTypes.oneOf(['dialog', 'inline', 'static']),
+  variant: 'inline',
   label: 'DatePicker',
   disableToolbar: false,
   format: 'MM/dd/yyyy',
