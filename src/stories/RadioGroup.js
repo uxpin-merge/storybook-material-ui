@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormControlLabel, RadioGroup as MaterialRadioGroup, Radio } from '@material-ui/core';
+import MaterialRadioGroup from '@material-ui/core/RadioGroup';
+import Radio from '@material-ui/core/Radio';
+import FormControlLabel from '@material-ui/core/FormControlLabel'
 
 export const RadioGroup = ({ items }) => {
   const [value, setValue] = React.useState();
@@ -9,7 +11,6 @@ export const RadioGroup = ({ items }) => {
     setValue(event.target.value);
   };
 
-  console.log(items)
   return (
     <MaterialRadioGroup aria-label="gender" name="gender1" value={value} onChange={handleChange}>
       {items.map(({ value, label }) => (
