@@ -61,7 +61,12 @@ export function Accordion({ data }) {
 
 
 Accordion.propTypes = {
-  data: PropTypes.object,
+  data: PropTypes.arrayOf({
+    title: PropTypes.string,
+    description: PropTypes.string,
+    text: PropTypes.string,
+    disabled: PropTypes.bool,
+  }),
 };
 
 Accordion.defaultProps = {
