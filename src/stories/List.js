@@ -28,7 +28,7 @@ export function List({ items }) {
   );
 }
 
-List.prototype = {
+List.propTypes = {
   items: PropTypes.arrayOf(PropTypes.string)
 }
 
