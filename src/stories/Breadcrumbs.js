@@ -10,12 +10,12 @@ function handleClick(event) {
 }
 
 export function Breadcrumbs({ items }) {
-  const itemsLength = items.length;
+  const lastIndex = items.length - 1;
 
   return (
     <MaterialBreadcrumbs aria-label="breadcrumb">
       {items.map((item, i) => {
-        if (i === itemsLength - 1) {
+        if (i === lastIndex) {
           return (
             <Typography color='textPrimary' >
               {item}
