@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import MaterialSwitch from '@material-ui/core/Switch';
 
-export const Switch = ({ color }) => {
+export const Switch = ({ type }) => {
   const [state, setState] = React.useState({
     checked: true,
   });
@@ -16,16 +16,16 @@ export const Switch = ({ color }) => {
       name='checked'
       checked={state.checked}
       onChange={handleChange}
-      color={color}
+      color={type}
     >
     </MaterialSwitch>
   );
 };
 
 Switch.propTypes = {
-  color: PropTypes.oneOf(['primary', 'secondary', 'default']),
+  type: PropTypes.oneOf(['primary', 'secondary', 'default']),
 };
 
 Switch.defaultProps = {
-  color: 'primary',
+  type: 'primary',
 }
