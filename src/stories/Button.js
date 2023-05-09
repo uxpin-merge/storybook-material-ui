@@ -19,7 +19,6 @@ Button.propTypes = {
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   backgroundColor: PropTypes.string,
   label: PropTypes.string,
-  label2: PropTypes.number,
   variant: PropTypes.oneOf(['text', 'outlined', 'contained']),
   disabled: PropTypes.bool,
 };
@@ -27,7 +26,6 @@ Button.propTypes = {
 Button.defaultProps = {
   backgroundColor: null,
   label: 'Hello world',
-  label2: PropTypes.number,
   size: 'medium',
   variant: 'contained',
   type: 'primary',
