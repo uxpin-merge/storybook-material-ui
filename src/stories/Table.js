@@ -57,6 +57,7 @@ export function Table({ rows, headers }) {
 }
 
 Table.propTypes = {
+  headers: PropTypes.object,
   rows: PropTypes.object,
 };
 
