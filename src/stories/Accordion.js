@@ -1,10 +1,10 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import MaterialAccordion from '@material-ui/core/Accordion';
-import AccordionDetails from '@material-ui/core/AccordionDetails';
-import AccordionSummary from '@material-ui/core/AccordionSummary';
-import Typography from '@material-ui/core/Typography';
-import MaterialIcon from '@material-ui/core/Icon';
+import { makeStyles } from '@mui/styles';
+import MaterialAccordion from '@mui/material/Accordion';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import Typography from '@mui/material/Typography';
+import MaterialIcon from '@mui/material/Icon';
 import PropTypes from "prop-types";
 
 const useStyles = makeStyles((theme) => ({
@@ -61,30 +61,10 @@ export function Accordion({ data }) {
 
 
 Accordion.propTypes = {
-  data: PropTypes.arrayOf({
+  data: PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string,
     description: PropTypes.string,
     text: PropTypes.string,
     disabled: PropTypes.bool,
-  }),
-};
-
-Accordion.defaultProps = {
-  data: [{
-    title: 'General settings',
-    description: 'I am an accordion',
-    text: 'Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat. Aliquam eget\n' +
-      'maximus est, id dignissim quam.'
-  }, {
-    title: 'Advanced settings',
-    description: 'I am an accordion2',
-    text: 'Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat. Aliquam eget\n' +
-      'maximus est, id dignissim quam.'
-  },  {
-    title: 'Advanced settings2',
-    disabled: true,
-    description: 'I am an accordion2',
-    text: 'Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat. Aliquam eget\n' +
-      'maximus est, id dignissim quam.'
-  }],
+  })),
 };
