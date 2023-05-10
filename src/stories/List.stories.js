@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { List } from './List';
 
 export default {
@@ -7,6 +6,10 @@ export default {
   component: List,
 };
 
-const Template = (args) => <List {...args} />;
-
-export const Primary = Template.bind({});
+export const Primary = {
+  args: {
+    items: ['Item 1', 'Item 2', 'Item 3'],
+    disabled: false,
+    divider: false
+  }
+}
