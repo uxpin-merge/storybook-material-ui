@@ -1,17 +1,13 @@
 import React from 'react';
-import MaterialAvatar from '@material-ui/core/Avatar';
+import MaterialAvatar from '@mui/material/Avatar';
 import PropTypes from "prop-types";
 
-export function Avatar({ name, image }) {
-  return (<MaterialAvatar alt={name} src={image} />);
+export function Avatar({ name, image, variant }) {
+  return (<MaterialAvatar variant={variant} alt={name} src={image} />);
 }
 
 Avatar.propTypes = {
   image: PropTypes.string,
   name: PropTypes.string,
-};
-
-Avatar.defaultProps = {
-  image: 'https://uxpin.s3.amazonaws.com/faces/44.png',
-  name: 'Remy Sharp',
+  variant: PropTypes.oneOf(['circular', 'rounded', 'square'])
 };
