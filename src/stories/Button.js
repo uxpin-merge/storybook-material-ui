@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import MaterialButton from '@material-ui/core/Button';
+import MaterialButton from '@mui/material/Button';
 
-export const Button = ({ backgroundColor, label, type, ...props }) => {
+export const Button = ({ label, color, ...props }) => {
   return (
     <MaterialButton
-      style={{ backgroundColor }}
-      color={type}
       {...props}
+      color={color}
     >
       {label}
     </MaterialButton>
@@ -15,19 +14,9 @@ export const Button = ({ backgroundColor, label, type, ...props }) => {
 };
 
 Button.propTypes = {
-  type: PropTypes.oneOf(['primary', 'secondary', 'default']),
+  color: PropTypes.oneOf(['primary', 'secondary', 'success', 'error', 'info', 'warning']),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
-  backgroundColor: PropTypes.string,
   label: PropTypes.string,
   variant: PropTypes.oneOf(['text', 'outlined', 'contained']),
   disabled: PropTypes.bool,
-};
-
-Button.defaultProps = {
-  backgroundColor: null,
-  label: 'Hello world',
-  size: 'medium',
-  variant: 'contained',
-  type: 'primary',
-  disabled: false,
 };
