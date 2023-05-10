@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import MaterialRadioGroup from '@material-ui/core/RadioGroup';
-import Radio from '@material-ui/core/Radio';
-import FormControlLabel from '@material-ui/core/FormControlLabel'
+import MaterialRadioGroup from '@mui/material/RadioGroup';
+import Radio from '@mui/material/Radio';
+import FormControlLabel from '@mui/material/FormControlLabel'
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
 
-export const RadioGroup = ({ items }) => {
+export const RadioGroup = ({ items, formLabel, defaultValue }) => {
   const [value, setValue] = React.useState();
 
   const handleChange = (event) => {
@@ -12,25 +14,22 @@ export const RadioGroup = ({ items }) => {
   };
 
   return (
-    <MaterialRadioGroup aria-label="gender" name="gender1" value={value} onChange={handleChange}>
+    <FormControl>
+      <FormLabel>{formLabel}</FormLabel>
+    <MaterialRadioGroup aria-label="gender" name="gender1" defaultValue={defaultValue} value={value} onChange={handleChange}>
       {items.map(({ value, label }) => (
         <FormControlLabel value={value} control={<Radio />} label={label} />
       ))}
     </MaterialRadioGroup>
+    </FormControl>
   );
 };
 
 RadioGroup.propTypes = {
-  items: PropTypes.arrayOf({
+  items: PropTypes.arrayOf(PropTypes.shape({
     value: PropTypes.string,
     label: PropTypes.string,
-  }),
-};
-
-RadioGroup.defaultProps = {
-  items: [
-    { value: 'option_1', label: 'OPTION 1' },
-    { value: 'option_2', label: 'OPTION 2' },
-    { value: 'other', label: 'Other' },
-  ]
+  })),
+  formLabel: PropTypes.string,
+  defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };

@@ -7,6 +7,14 @@ export default {
   component: RadioGroup,
 };
 
-const Template = (args) => <RadioGroup {...args} />;
-
-export const Primary = Template.bind({});
+export const Primary = {
+  args: {
+    items: [
+      { value: 'option_1', label: 'OPTION 1' },
+      { value: 'option_2', label: 'OPTION 2' },
+      { value: 'other', label: 'Other' },
+    ],
+    defaultValue: 'option_2',
+    formLabel: 'Options'
+  }
+}
