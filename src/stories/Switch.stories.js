@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Switch } from './Switch';
 
 export default {
@@ -7,6 +6,10 @@ export default {
   component: Switch,
 };
 
-const Template = (args) => <Switch {...args} />;
-
-export const Primary = Template.bind({});
+export const Primary = {
+  args: {
+    color: 'primary',
+    size: 'medium',
+    disabled: false
+  }
+}
