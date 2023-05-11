@@ -1,14 +1,14 @@
 import React from 'react';
-import MaterialStepper from '@material-ui/core/Stepper';
-import Step from '@material-ui/core/Step';
-import StepLabel from '@material-ui/core/StepLabel';
+import MaterialStepper from '@mui/material/Stepper';
+import Step from '@mui/material/Step';
+import StepLabel from '@mui/material/StepLabel';
 import PropTypes from "prop-types";
 
-export function Stepper({ activeStep, steps }) {
+export function Stepper({ activeStep, steps, orientation }) {
 
   return (
-    <MaterialStepper activeStep={activeStep}>
-      {steps.map((label, index) => {
+    <MaterialStepper orientation={orientation} activeStep={activeStep}>
+      {steps.map((label, _index) => {
         const stepProps = {};
         if (activeStep < label) {
           stepProps.completed = true;
@@ -27,9 +27,5 @@ export function Stepper({ activeStep, steps }) {
 Stepper.propTypes = {
   activeStep: PropTypes.number,
   steps: PropTypes.arrayOf(PropTypes.string),
-};
-
-Stepper.defaultProps = {
-  activeStep: 0,
-  steps: ['Step 1', 'Step 2', 'Step 3']
+  orientation: PropTypes.oneOf(['horizontal', 'vertical'])
 };
