@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Select } from './Select';
 
 export default {
@@ -7,6 +6,21 @@ export default {
   component: Select,
 };
 
-const Template = (args) => <Select {...args} />;
+export const Primary = {
+  args: {
+    inputLabel: 'Age',
+    options: [{
+      label: 'Ten',
+      value: 10,
+    },{
+      label: 'Twenty',
+      value: 20,
 
-export const Primary = Template.bind({});
+    },{
+      label: 'Thirty',
+      value: 30,
+    }],
+    variant: 'standard',
+    fullWidth: true,
+  }
+}
