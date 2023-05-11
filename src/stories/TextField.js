@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import MaterialTextField from '@material-ui/core/TextField';
+import MaterialTextField from '@mui/material/TextField';
 
-export const TextField = ({ label, variant, error, helperText, disabled, required }) => {
+export const TextField = ({ label, variant, error, helperText, disabled, required, ...moreProps }) => {
   return (
     <form noValidate autoComplete="off">
       <MaterialTextField
+        {...moreProps}
         id="standard-basic"
         label={label}
         variant={variant}
@@ -24,13 +25,6 @@ TextField.propTypes = {
   disabled: PropTypes.bool,
   required: PropTypes.bool,
   helperText: PropTypes.string,
-};
-
-TextField.defaultProps = {
-  label: 'Standard',
-  variant: 'standard',
-  disabled: false,
-  required: false,
-  error: false,
-  helperText: undefined
+  placeholder: PropTypes.string,
+  color: PropTypes.oneOf(['primary', 'secondary', 'error', 'info', 'success', 'warning']),
 };
