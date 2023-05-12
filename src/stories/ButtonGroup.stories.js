@@ -7,6 +7,14 @@ export default {
   component: ButtonGroup,
 };
 
-const Template = (args) => <ButtonGroup {...args} />;
-
-export const Primary = Template.bind({});
+export const Primary = {
+    args: {
+      buttons: [{ label: 'one' }, { label: 'two' }, {  label: 'three' }],
+      size: 'medium',
+      variant: 'contained',
+      color: 'primary',
+      disabled: false,
+      orientation: 'horizontal',
+      fullWidth: false
+  }
+}

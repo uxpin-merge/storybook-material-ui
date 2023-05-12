@@ -1,43 +1,55 @@
-import 'date-fns';
 import React from 'react';
 import PropTypes from 'prop-types';
-import DateFnsUtils from '@date-io/date-fns';
-import {
-  MuiPickersUtilsProvider,
-  KeyboardDatePicker,
-} from '@material-ui/pickers';
+import TextField from '@mui/material/TextField';
+import { DatePicker as DatePickerM } from '@mui/x-date-pickers/DatePicker';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 
-export const DatePicker = ({ disableToolbar, variant, label, format }) => {
-  const [selectedDate, setSelectedDate] = React.useState(new Date());
+
+export const DatePicker = ({ disabled, label, helperText, views }) => {
+  const [selectedDate, setSelectedDate] = React.useState(null);
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
   };
 
   return (
-    <MuiPickersUtilsProvider utils={DateFnsUtils}>
-      <KeyboardDatePicker
-        disableToolbar={disableToolbar}
-        variant={variant}
-        format={format}
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <DatePickerM
+        disabled={disabled}
         label={label}
         value={selectedDate}
+        views={views}
         onChange={handleDateChange}
+        renderInput={(params) => <TextField {...params} helperText={helperText} />}
       />
-    </MuiPickersUtilsProvider>
+    </LocalizationProvider>
   );
 }
 
 DatePicker.propTypes = {
-  variant: PropTypes.oneOf(['dialog', 'inline', 'static']),
-  label: PropTypes.string,
-  disableToolbar: PropTypes.bool,
-  format: PropTypes.string,
-};
+    /**
+     * The label text of the input.
+     */
+    label: PropTypes.string,
+
+    /**
+     * The helper text of the input.
+     */
+    helperText: PropTypes.string,
+
+    /**
+     * The value of the picker.
+     */
+    value: PropTypes.node,
+
+    /**
+     * If true, the picker and text field are disabled.
+     * */
+    disabled: PropTypes.bool,
+  };
 
 DatePicker.defaultProps = {
-  variant: 'inline',
   label: 'DatePicker',
-  disableToolbar: false,
-  format: 'MM/dd/yyyy',
+  disabled: false,
 };

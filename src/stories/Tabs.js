@@ -1,14 +1,12 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import MaterialTabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
+import MaterialTabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
 import PropTypes from "prop-types";
 
-
-export function Tabs({ centered, indicatorType, textType, tabs, textColor }) {
+export function Tabs({ centered, indicatorColor, textColor, tabs, variant, orientation }) {
   const [value, setValue] = React.useState(0);
 
-  const handleChange = (event, newValue) => {
+  const handleChange = (_event, newValue) => {
     setValue(newValue);
   };
 
@@ -16,9 +14,11 @@ export function Tabs({ centered, indicatorType, textType, tabs, textColor }) {
     <MaterialTabs
       value={value}
       onChange={handleChange}
-      indicatorColor={indicatorType}
-      textColor={textType}
+      indicatorColor={indicatorColor}
+      textColor={textColor}
       centered={centered}
+      variant={variant}
+      orientation={orientation}
     >
       {tabs.map((tab) => (
         <Tab label={tab} />
@@ -29,15 +29,9 @@ export function Tabs({ centered, indicatorType, textType, tabs, textColor }) {
 
 Tabs.propTypes = {
   centered: PropTypes.bool,
-  indicatorType: PropTypes.oneOf(['primary', 'secondary', 'default']),
-  textType: PropTypes.oneOf(['primary', 'secondary', 'default']),
+  indicatorColor: PropTypes.oneOf(['primary', 'secondary']),
+  textColor: PropTypes.oneOf(['primary', 'secondary']),
   tabs: PropTypes.arrayOf(PropTypes.string),
+  orientation: PropTypes.oneOf(['horizontal', 'vertical']),
+  variant: PropTypes.oneOf(['fullWidth', 'scrollable', 'standard'])
 };
-
-Tabs.defaultProps = {
-  centered: true,
-  indicatorType: 'primary',
-  textType: 'primary',
-  tabs: ['Item One', 'Item Two', 'Item Three']
-};
-

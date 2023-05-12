@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { TextField } from './TextField';
 
 export default {
@@ -7,6 +6,15 @@ export default {
   component: TextField,
 };
 
-const Template = (args) => <TextField {...args} />;
-
-export const Primary = Template.bind({});
+export const Primary = {
+  args: {
+    label: 'Standard',
+    variant: 'standard',
+    disabled: false,
+    required: false,
+    error: false,
+    helperText: undefined,
+    placeholder: 'write here!',
+    color: 'primary',
+  }
+}

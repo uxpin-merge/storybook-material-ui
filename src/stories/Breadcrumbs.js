@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import MaterialBreadcrumbs from '@material-ui/core/Breadcrumbs';
-import Link from '@material-ui/core/Link';
-import Typography from '@material-ui/core/Typography';
+import MaterialBreadcrumbs from '@mui/material/Breadcrumbs';
+import Link from '@mui/material/Link';
+import Typography from '@mui/material/Typography';
 
 function handleClick(event) {
   event.preventDefault();
@@ -35,8 +35,4 @@ export function Breadcrumbs({ items }) {
 
 Breadcrumbs.propTypes = {
   items: PropTypes.arrayOf(PropTypes.string),
-}
-
-Breadcrumbs.defaultProps = {
-  items: ['Page 1', 'Page 2', 'Page 3'],
 }

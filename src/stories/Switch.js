@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import MaterialSwitch from '@material-ui/core/Switch';
+import MaterialSwitch from '@mui/material/Switch';
 
-export const Switch = ({ type }) => {
+export const Switch = ({ color, disabled, size }) => {
   const [state, setState] = React.useState({
     checked: true,
   });
@@ -16,16 +16,16 @@ export const Switch = ({ type }) => {
       name='checked'
       checked={state.checked}
       onChange={handleChange}
-      color={type}
+      color={color}
+      disabled={disabled}
+      size={size}
     >
     </MaterialSwitch>
   );
 };
 
 Switch.propTypes = {
-  type: PropTypes.oneOf(['primary', 'secondary', 'default']),
+  color: PropTypes.oneOf(['primary', 'secondary', 'error', 'info', 'success', 'warning']),
+  size: PropTypes.oneOf(['small', 'medium']),
+  disabled: PropTypes.bool
 };
-
-Switch.defaultProps = {
-  type: 'primary',
-}

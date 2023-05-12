@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
-import Avatar from '@material-ui/core/Avatar';
+import makeStyles from '@mui/styles/makeStyles';
+import Avatar from '@mui/material/Avatar';
+import AvatarGroupM from '@mui/material/AvatarGroup';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -12,28 +13,20 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const AvatarGroup = ({ avatars }) => {
+export const AvatarGroup = ({ avatars, spacing, variant }) => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <AvatarGroupM variant={variant} spacing={spacing} className={classes.root}>
       {avatars.map(({ name, image }) => (
         <Avatar alt={name} src={image} />
       ))}
-    </div>
+    </AvatarGroupM>
   );
 };
 
 AvatarGroup.propTypes = {
-  avatars: PropTypes.arrayOf({ name: PropTypes.string, image: PropTypes.string }),
-};
-
-AvatarGroup.defaultProps = {
-  avatars: [{
-    image: 'https://uxpin.s3.amazonaws.com/faces/44.png',
-    name: 'Remy Sharp',
-  },{
-    image: '',
-    name: 'John Doe',
-  }],
+  avatars: PropTypes.arrayOf(PropTypes.shape({ name: PropTypes.string, image: PropTypes.string })),
+  spacing: PropTypes.oneOf(['small', 'medium']),
+  variant: PropTypes.oneOf(['circular', 'rounded', 'square'])
 };

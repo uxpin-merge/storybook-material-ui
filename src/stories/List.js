@@ -1,10 +1,11 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import MaterialList from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
+import MaterialList from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import ListItemButton from '@mui/material/ListItemButton';
 
-export function List({ items }) {
+export function List({ items, disabled, divider }) {
   const [selectedIndex, setSelectedIndex] = React.useState(1);
 
   const handleListItemClick = (index) => {
@@ -16,11 +17,13 @@ export function List({ items }) {
       <MaterialList component="nav" aria-label="main mailbox folders">
         {items.map((item, index) => (
           <ListItem
-            button
-            selected={selectedIndex === index}
+            key={index}
+            divider={divider}
             onClick={() => handleListItemClick(index)}
           >
-            <ListItemText primary={item} />
+            <ListItemButton disabled={disabled} selected={selectedIndex === index}>
+              <ListItemText primary={item} />
+            </ListItemButton>
           </ListItem>
         ))}
       </MaterialList>
@@ -29,9 +32,7 @@ export function List({ items }) {
 }
 
 List.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.string)
-}
-
-List.defaultProps = {
-  items: ['Item 1', 'Item 2', 'Item 3']
+  disabled: PropTypes.bool,
+  items: PropTypes.arrayOf(PropTypes.string),
+  divider: PropTypes.bool
 }
