@@ -14,8 +14,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "storybook": "^7.0.9",
-    "webpack": "^5.82.1",
-    "webpack-cli": "^5.1.1"
+    "webpack": "^5.82.1"
   },
   "scripts": {
     "storybook": "storybook dev -p 6006",
@@ -59,7 +58,6 @@
     "@storybook/preset-create-react-app": "^7.0.9",
     "@storybook/react": "^7.0.9",
     "@storybook/react-webpack5": "^7.0.9",
-    "@uxpin/storybook-deployer": "^1.0.0",
-    "gh-pages": "^5.0.0"
+    "@uxpin/storybook-deployer": "^1.0.0"
   }
 }
