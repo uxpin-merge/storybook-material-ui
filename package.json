@@ -1,8 +1,7 @@
 {
   "name": "storybook-material-ui",
-  "homepage": "http://robhil.github.io/storybook-test",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
@@ -14,8 +13,9 @@
     "dayjs": "^1.11.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "^5.0.1",
-    "storybook": "^7.0.9"
+    "storybook": "^7.0.9",
+    "webpack": "^5.82.1",
+    "webpack-cli": "^5.1.1"
   },
   "scripts": {
     "storybook": "storybook dev -p 6006",
