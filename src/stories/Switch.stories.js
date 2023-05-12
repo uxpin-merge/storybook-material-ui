@@ -10,6 +10,6 @@ export const Primary = {
   args: {
     color: 'primary',
     size: 'medium',
-    disabled: false
-  }
-}
+    disabled: false,
+  },
+};

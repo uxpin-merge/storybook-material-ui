@@ -11,6 +11,6 @@ export const Primary = {
   args: {
     name: 'Remy Sharp',
     image: 'https://uxpin.s3.amazonaws.com/faces/44.png',
-    variant: 'circular'
-  }
-}
+    variant: 'circular',
+  },
+};

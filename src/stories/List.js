@@ -16,11 +16,7 @@ export function List({ items, disabled, divider }) {
     <Fragment>
       <MaterialList component="nav" aria-label="main mailbox folders">
         {items.map((item, index) => (
-          <ListItem
-            key={index}
-            divider={divider}
-            onClick={() => handleListItemClick(index)}
-          >
+          <ListItem key={index} divider={divider} onClick={() => handleListItemClick(index)}>
             <ListItemButton disabled={disabled} selected={selectedIndex === index}>
               <ListItemText primary={item} />
             </ListItemButton>
@@ -34,5 +30,5 @@ export function List({ items, disabled, divider }) {
 List.propTypes = {
   disabled: PropTypes.bool,
   items: PropTypes.arrayOf(PropTypes.string),
-  divider: PropTypes.bool
-}
+  divider: PropTypes.bool,
+};

@@ -10,6 +10,6 @@ export const Primary = {
   args: {
     items: ['Item 1', 'Item 2', 'Item 3'],
     disabled: false,
-    divider: false
-  }
-}
+    divider: false,
+  },
+};

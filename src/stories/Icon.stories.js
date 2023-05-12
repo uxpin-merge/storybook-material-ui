@@ -11,5 +11,5 @@ export const primary = {
     color: 'primary',
     fontSize: 'medium',
     icon: 'star',
-  }
-}
+  },
+};

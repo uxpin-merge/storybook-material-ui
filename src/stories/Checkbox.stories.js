@@ -12,5 +12,5 @@ export const Primary = {
     size: 'medium',
     color: 'primary',
     disabled: false,
-  }
-}
+  },
+};

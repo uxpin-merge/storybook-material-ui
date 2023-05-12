@@ -16,5 +16,5 @@ export const Primary = {
     helperText: undefined,
     placeholder: 'write here!',
     color: 'primary',
-  }
-}
+  },
+};

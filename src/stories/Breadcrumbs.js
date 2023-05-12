@@ -16,17 +16,13 @@ export function Breadcrumbs({ items }) {
     <MaterialBreadcrumbs aria-label="breadcrumb">
       {items.map((item, i) => {
         if (i === lastIndex) {
-          return (
-            <Typography color='textPrimary' >
-              {item}
-            </Typography>
-          )
+          return <Typography color="textPrimary">{item}</Typography>;
         } else {
           return (
-            <Link color='inherit' href="/" onClick={handleClick} >
+            <Link color="inherit" href="/" onClick={handleClick}>
               {item}
             </Link>
-          )
+          );
         }
       })}
     </MaterialBreadcrumbs>
@@ -35,4 +31,4 @@ export function Breadcrumbs({ items }) {
 
 Breadcrumbs.propTypes = {
   items: PropTypes.arrayOf(PropTypes.string),
-}
+};

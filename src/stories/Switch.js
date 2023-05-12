@@ -13,19 +13,18 @@ export const Switch = ({ color, disabled, size }) => {
 
   return (
     <MaterialSwitch
-      name='checked'
+      name="checked"
       checked={state.checked}
       onChange={handleChange}
       color={color}
       disabled={disabled}
       size={size}
-    >
-    </MaterialSwitch>
+    ></MaterialSwitch>
   );
 };
 
 Switch.propTypes = {
   color: PropTypes.oneOf(['primary', 'secondary', 'error', 'info', 'success', 'warning']),
   size: PropTypes.oneOf(['small', 'medium']),
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
 };

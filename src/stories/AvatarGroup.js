@@ -28,5 +28,5 @@ export const AvatarGroup = ({ avatars, spacing, variant }) => {
 AvatarGroup.propTypes = {
   avatars: PropTypes.arrayOf(PropTypes.shape({ name: PropTypes.string, image: PropTypes.string })),
   spacing: PropTypes.oneOf(['small', 'medium']),
-  variant: PropTypes.oneOf(['circular', 'rounded', 'square'])
+  variant: PropTypes.oneOf(['circular', 'rounded', 'square']),
 };

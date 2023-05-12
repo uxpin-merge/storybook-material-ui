@@ -5,7 +5,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
 import MaterialIcon from '@mui/material/Icon';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,13 +22,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const head  = document.getElementsByTagName('head')[0];
-const link  = document.createElement('link');
-link.rel  = 'stylesheet';
+const head = document.getElementsByTagName('head')[0];
+const link = document.createElement('link');
+link.rel = 'stylesheet';
 link.type = 'text/css';
 link.href = 'https://fonts.googleapis.com/icon?family=Material+Icons';
 head.appendChild(link);
-
 
 export function Accordion({ data }) {
   const classes = useStyles();
@@ -41,17 +40,17 @@ export function Accordion({ data }) {
   return (
     <div className={classes.root}>
       {data.map(({ title, disabled, description, text }, index) => (
-        <MaterialAccordion disabled={!!disabled} expanded={expanded === `panel${index}`} onChange={handleChange(`panel${index}`)}>
-          <AccordionSummary
-            expandIcon={<MaterialIcon>expand_more</MaterialIcon>}
-          >
-            <Typography className={classes.heading}>{ title }</Typography>
-            <Typography className={classes.secondaryHeading}>{ description }</Typography>
+        <MaterialAccordion
+          disabled={!!disabled}
+          expanded={expanded === `panel${index}`}
+          onChange={handleChange(`panel${index}`)}
+        >
+          <AccordionSummary expandIcon={<MaterialIcon>expand_more</MaterialIcon>}>
+            <Typography className={classes.heading}>{title}</Typography>
+            <Typography className={classes.secondaryHeading}>{description}</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>
-              { text }
-            </Typography>
+            <Typography>{text}</Typography>
           </AccordionDetails>
         </MaterialAccordion>
       ))}
@@ -59,12 +58,13 @@ export function Accordion({ data }) {
   );
 }
 
-
 Accordion.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.shape({
-    title: PropTypes.string,
-    description: PropTypes.string,
-    text: PropTypes.string,
-    disabled: PropTypes.bool,
-  })),
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string,
+      description: PropTypes.string,
+      text: PropTypes.string,
+      disabled: PropTypes.bool,
+    })
+  ),
 };

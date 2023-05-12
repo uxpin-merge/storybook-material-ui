@@ -4,10 +4,7 @@ import MaterialButton from '@mui/material/Button';
 
 export const Button = ({ label, color, ...props }) => {
   return (
-    <MaterialButton
-      {...props}
-      color={color}
-    >
+    <MaterialButton {...props} color={color}>
       {label}
     </MaterialButton>
   );

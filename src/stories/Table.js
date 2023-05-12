@@ -6,7 +6,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 export function Table({ rows, headers, padding, size }) {
   return (
@@ -14,7 +14,9 @@ export function Table({ rows, headers, padding, size }) {
       <MaterialTable size={size} padding={padding}>
         <TableHead>
           <TableRow>
-            {headers.map((header) => ( <TableCell align={header.align}>{header.name}</TableCell> ))}
+            {headers.map((header) => (
+              <TableCell align={header.align}>{header.name}</TableCell>
+            ))}
           </TableRow>
         </TableHead>
         <TableBody>
@@ -39,5 +41,5 @@ Table.propTypes = {
   headers: PropTypes.object,
   rows: PropTypes.object,
   padding: PropTypes.oneOf(['none', 'normal']),
-  size: PropTypes.oneOf(['small', 'medium'])
+  size: PropTypes.oneOf(['small', 'medium']),
 };
