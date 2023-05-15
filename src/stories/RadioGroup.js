@@ -23,8 +23,8 @@ export const RadioGroup = ({ items, formLabel, defaultValue }) => {
         value={value}
         onChange={handleChange}
       >
-        {items.map(({ value, label }) => (
-          <FormControlLabel value={value} control={<Radio />} label={label} />
+        {items.map(({ value, label }, index) => (
+          <FormControlLabel key={index} value={value} control={<Radio />} label={label} />
         ))}
       </MaterialRadioGroup>
     </FormControl>

@@ -16,10 +16,14 @@ export function Breadcrumbs({ items }) {
     <MaterialBreadcrumbs aria-label="breadcrumb">
       {items.map((item, i) => {
         if (i === lastIndex) {
-          return <Typography color="textPrimary">{item}</Typography>;
+          return (
+            <Typography key={i} color="textPrimary">
+              {item}
+            </Typography>
+          );
         } else {
           return (
-            <Link color="inherit" href="/" onClick={handleClick}>
+            <Link key={i} color="inherit" href="/" onClick={handleClick}>
               {item}
             </Link>
           );

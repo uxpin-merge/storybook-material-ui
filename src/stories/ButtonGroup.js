@@ -6,8 +6,8 @@ import MaterialButtonGroup from '@mui/material/ButtonGroup';
 export const ButtonGroup = ({ buttons, color, ...props }) => {
   return (
     <MaterialButtonGroup color={color} {...props}>
-      {buttons.map((button) => (
-        <Button>{button.label}</Button>
+      {buttons.map((button, index) => (
+        <Button key={index}>{button.label}</Button>
       ))}
     </MaterialButtonGroup>
   );

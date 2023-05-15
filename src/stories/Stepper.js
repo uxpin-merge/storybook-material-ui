@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 export function Stepper({ activeStep, steps, orientation }) {
   return (
     <MaterialStepper orientation={orientation} activeStep={activeStep}>
-      {steps.map((label, _index) => {
+      {steps.map((label) => {
         const stepProps = {};
         if (activeStep < label) {
           stepProps.completed = true;

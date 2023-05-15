@@ -14,8 +14,10 @@ export function Table({ rows, headers, padding, size }) {
       <MaterialTable size={size} padding={padding}>
         <TableHead>
           <TableRow>
-            {headers.map((header) => (
-              <TableCell align={header.align}>{header.name}</TableCell>
+            {headers.map((header, index) => (
+              <TableCell key={index} align={header.align}>
+                {header.name}
+              </TableCell>
             ))}
           </TableRow>
         </TableHead>

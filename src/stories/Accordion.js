@@ -41,6 +41,7 @@ export function Accordion({ data }) {
     <div className={classes.root}>
       {data.map(({ title, disabled, description, text }, index) => (
         <MaterialAccordion
+          key={index}
           disabled={!!disabled}
           expanded={expanded === `panel${index}`}
           onChange={handleChange(`panel${index}`)}

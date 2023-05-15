@@ -20,8 +20,8 @@ export function Tabs({ centered, indicatorColor, textColor, tabs, variant, orien
       variant={variant}
       orientation={orientation}
     >
-      {tabs.map((tab) => (
-        <Tab label={tab} />
+      {tabs.map((tab, index) => (
+        <Tab key={index} label={tab} />
       ))}
     </MaterialTabs>
   );

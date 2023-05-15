@@ -6,7 +6,7 @@ export default {
   component: Icon,
 };
 
-export const primary = {
+export const Primary = {
   args: {
     color: 'primary',
     fontSize: 'medium',

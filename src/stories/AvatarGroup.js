@@ -18,8 +18,8 @@ export const AvatarGroup = ({ avatars, spacing, variant }) => {
 
   return (
     <AvatarGroupM variant={variant} spacing={spacing} className={classes.root}>
-      {avatars.map(({ name, image }) => (
-        <Avatar alt={name} src={image} />
+      {avatars.map(({ name, image }, index) => (
+        <Avatar key={index} alt={name} src={image} />
       ))}
     </AvatarGroupM>
   );
