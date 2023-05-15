@@ -22,7 +22,7 @@ They both allow you to design with pre-built code components, the main differenc
 
 1. Fork this repository and clone it to your computer.
 2. Install dependencies with `yarn install`.
-3. compile storybook files with `yarn build-storybook`.
+3. compile storybook files with `yarn run build-storybook`.
 4. Log in to your UXPin account.
 5. Generate new private storybook token from UXPin editor.
 6. push library to UXPin with `npx uxpin-storybook-deployer -t TOKEN -s path/to/your/storybook`.
@@ -31,7 +31,7 @@ They both allow you to design with pre-built code components, the main differenc
 
 1. Fork this repository and clone it to your computer.
 2. Install dependencies with `yarn install`.
-3. compile storybook files with `yarn build-storybook`.
+3. compile storybook files with `yarn run build-storybook`.
 4. Publish storybook on a hosting platform such as [chromatic](https://www.chromatic.com/docs/) and retrieve the URL
 5. Log in to your UXPin account.
 6. Add new public storybook with URL provided from your chosen hosting platform.
