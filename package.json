@@ -19,10 +19,9 @@
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "predeploy": "npm run build-storybook",
     "eslint": "npx eslint src/",
     "prettier": "npx prettier --write src/",
-    "prettier-check": "npx prettier --check src/"
+    "check": "npx prettier --check src/"
   },
   "browserslist": {
     "production": [
