@@ -21,7 +21,8 @@
     "build-storybook": "storybook build",
     "predeploy": "npm run build-storybook",
     "eslint": "npx eslint src/",
-    "prettier": "npx prettier --write src/"
+    "prettier": "npx prettier --write src/",
+    "prettier-check": "npx prettier --check src/"
   },
   "browserslist": {
     "production": [
