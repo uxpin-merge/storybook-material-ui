@@ -15,6 +15,6 @@ export const Primary = {
       { value: 'other', label: 'Other' },
     ],
     defaultValue: 'option_2',
-    formLabel: 'Options'
-  }
-}
+    formLabel: 'Options',
+  },
+};

@@ -1,7 +1,7 @@
 import React from 'react';
 import MaterialTabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 export function Tabs({ centered, indicatorColor, textColor, tabs, variant, orientation }) {
   const [value, setValue] = React.useState(0);
@@ -20,8 +20,8 @@ export function Tabs({ centered, indicatorColor, textColor, tabs, variant, orien
       variant={variant}
       orientation={orientation}
     >
-      {tabs.map((tab) => (
-        <Tab label={tab} />
+      {tabs.map((tab, index) => (
+        <Tab key={index} label={tab} />
       ))}
     </MaterialTabs>
   );
@@ -33,5 +33,5 @@ Tabs.propTypes = {
   textColor: PropTypes.oneOf(['primary', 'secondary']),
   tabs: PropTypes.arrayOf(PropTypes.string),
   orientation: PropTypes.oneOf(['horizontal', 'vertical']),
-  variant: PropTypes.oneOf(['fullWidth', 'scrollable', 'standard'])
+  variant: PropTypes.oneOf(['fullWidth', 'scrollable', 'standard']),
 };

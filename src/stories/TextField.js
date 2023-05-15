@@ -13,7 +13,8 @@ export const TextField = ({ label, variant, error, helperText, disabled, require
         error={error}
         disabled={disabled}
         required={required}
-        helperText={helperText} />
+        helperText={helperText}
+      />
     </form>
   );
 };

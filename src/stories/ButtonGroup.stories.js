@@ -8,13 +8,13 @@ export default {
 };
 
 export const Primary = {
-    args: {
-      buttons: [{ label: 'one' }, { label: 'two' }, {  label: 'three' }],
-      size: 'medium',
-      variant: 'contained',
-      color: 'primary',
-      disabled: false,
-      orientation: 'horizontal',
-      fullWidth: false
-  }
-}
+  args: {
+    buttons: [{ label: 'one' }, { label: 'two' }, { label: 'three' }],
+    size: 'medium',
+    variant: 'contained',
+    color: 'primary',
+    disabled: false,
+    orientation: 'horizontal',
+    fullWidth: false,
+  },
+};

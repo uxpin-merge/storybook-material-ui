@@ -18,8 +18,8 @@ export const AvatarGroup = ({ avatars, spacing, variant }) => {
 
   return (
     <AvatarGroupM variant={variant} spacing={spacing} className={classes.root}>
-      {avatars.map(({ name, image }) => (
-        <Avatar alt={name} src={image} />
+      {avatars.map(({ name, image }, index) => (
+        <Avatar key={index} alt={name} src={image} />
       ))}
     </AvatarGroupM>
   );
@@ -28,5 +28,5 @@ export const AvatarGroup = ({ avatars, spacing, variant }) => {
 AvatarGroup.propTypes = {
   avatars: PropTypes.arrayOf(PropTypes.shape({ name: PropTypes.string, image: PropTypes.string })),
   spacing: PropTypes.oneOf(['small', 'medium']),
-  variant: PropTypes.oneOf(['circular', 'rounded', 'square'])
+  variant: PropTypes.oneOf(['circular', 'rounded', 'square']),
 };

@@ -20,23 +20,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "predeploy": "npm run build-storybook",
-    "deploy-storybook": "gh-pages -d storybook-static"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ],
-    "overrides": [
-      {
-        "files": [
-          "**/*.stories.*"
-        ],
-        "rules": {
-          "import/no-anonymous-default-export": "off"
-        }
-      }
-    ]
+    "eslint": "npx eslint src/",
+    "prettier": "npx prettier --write src/"
   },
   "browserslist": {
     "production": [
@@ -58,6 +43,12 @@
     "@storybook/preset-create-react-app": "^7.0.9",
     "@storybook/react": "^7.0.9",
     "@storybook/react-webpack5": "^7.0.9",
-    "@uxpin/storybook-deployer": "^1.0.0"
+    "@uxpin/storybook-deployer": "^1.0.0",
+    "eslint": "^8.40.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-storybook": "^0.6.12",
+    "prettier": "^2.8.8"
   }
 }

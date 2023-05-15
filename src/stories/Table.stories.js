@@ -19,18 +19,18 @@ const exampleRows = [
 ];
 
 const exampleHeaders = [
-  { name: 'Dessert (100g serving)', align: '', },
-  { name: 'Calories', align: 'right', },
-  { name: 'Fat (g)', align: 'right', },
-  { name: 'Carbs (g)', align: 'right', },
-  { name: 'Protein (g)', align: 'right', }
-]
+  { name: 'Dessert (100g serving)', align: '' },
+  { name: 'Calories', align: 'right' },
+  { name: 'Fat (g)', align: 'right' },
+  { name: 'Carbs (g)', align: 'right' },
+  { name: 'Protein (g)', align: 'right' },
+];
 
 export const Primary = {
   args: {
     headers: exampleHeaders,
     rows: exampleRows,
     padding: 'normal',
-    size: 'medium'
-  }
-}
+    size: 'medium',
+  },
+};

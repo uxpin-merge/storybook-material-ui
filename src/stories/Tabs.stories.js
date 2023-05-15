@@ -13,6 +13,6 @@ export const Primary = {
     textColor: 'primary',
     tabs: ['Item One', 'Item Two', 'Item Three'],
     orientation: 'horizontal',
-    variant: 'fillWidth'
-  }
-}
+    variant: 'standard',
+  },
+};

@@ -17,16 +17,16 @@ export function Breadcrumbs({ items }) {
       {items.map((item, i) => {
         if (i === lastIndex) {
           return (
-            <Typography color='textPrimary' >
+            <Typography key={i} color="textPrimary">
               {item}
             </Typography>
-          )
+          );
         } else {
           return (
-            <Link color='inherit' href="/" onClick={handleClick} >
+            <Link key={i} color="inherit" href="/" onClick={handleClick}>
               {item}
             </Link>
-          )
+          );
         }
       })}
     </MaterialBreadcrumbs>
@@ -35,4 +35,4 @@ export function Breadcrumbs({ items }) {
 
 Breadcrumbs.propTypes = {
   items: PropTypes.arrayOf(PropTypes.string),
-}
+};

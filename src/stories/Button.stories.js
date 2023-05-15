@@ -14,5 +14,5 @@ export const Primary = {
     variant: 'contained',
     color: 'primary',
     disabled: false,
-  }
-}
+  },
+};

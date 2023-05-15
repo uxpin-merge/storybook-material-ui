@@ -9,18 +9,21 @@ export default {
 export const Primary = {
   args: {
     inputLabel: 'Age',
-    options: [{
-      label: 'Ten',
-      value: 10,
-    },{
-      label: 'Twenty',
-      value: 20,
-
-    },{
-      label: 'Thirty',
-      value: 30,
-    }],
+    options: [
+      {
+        label: 'Ten',
+        value: 10,
+      },
+      {
+        label: 'Twenty',
+        value: 20,
+      },
+      {
+        label: 'Thirty',
+        value: 30,
+      },
+    ],
     variant: 'standard',
     fullWidth: true,
-  }
-}
+  },
+};

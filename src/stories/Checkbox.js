@@ -3,13 +3,7 @@ import PropTypes from 'prop-types';
 import MaterialCheckbox from '@mui/material/Checkbox';
 
 export const Checkbox = ({ color, disabled, ...props }) => {
-  return (
-    <MaterialCheckbox
-      {...props}
-      color={color}
-      disabled={disabled}
-    />
-  );
+  return <MaterialCheckbox {...props} color={color} disabled={disabled} />;
 };
 
 Checkbox.propTypes = {
